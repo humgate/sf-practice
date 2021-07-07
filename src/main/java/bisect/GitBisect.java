@@ -23,6 +23,7 @@ public class GitBisect {
         while (l != r - 1) {
             int mid = (l + r) / 2;
             Utils.runExtCommand("git", "checkout", commitList.get(mid));
+            System.out.println("Checking commit: " + commitList.get(mid));
             if (check.getAsBoolean()) {
                 l = mid;
             } else {
@@ -30,7 +31,7 @@ public class GitBisect {
             }
         }
 
-        Utils.runExtCommand("git", "checkout", "main");
+        Utils.runExtCommand("git", "checkout", "-f", "main");
         return l;
     }
 

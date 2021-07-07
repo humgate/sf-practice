@@ -1,0 +1,1 @@
+java -jar D:\JProjects\sf-practice\target\command-jar-with-dependencies.jar
